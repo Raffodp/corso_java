@@ -10,6 +10,10 @@ public class Punto {
 	 * @param a inserire il valore intero della coordinata x
 	 * @param b inserire il valore intero della coordinata y
 	 */
+	
+	public Punto() {} // costruttore di default
+	
+	
 	public Punto(int x, int y) {
 		this.x = x;
 		this.y = y;
