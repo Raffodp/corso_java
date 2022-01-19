@@ -8,6 +8,7 @@ public class Rettangolo extends FiguraGeometrica {
 		
 		this.base = base;
 		this.altezza = altezza;
+		this.nomeForma = "rettangolare";
 	}
 	
 	public double perimetro() {

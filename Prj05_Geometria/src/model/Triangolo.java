@@ -13,7 +13,17 @@ public class Triangolo extends FiguraGeometrica {
 		this.ab = new Segmento(a, b);
 		this.bc = new Segmento(b, c);
 		this.ac = new Segmento(a, c);
+		
+
 	
+	}
+	public Triangolo(Segmento ab, Segmento bc, Segmento ac) {
+		
+		this.ab = ab;
+		this.bc = bc;
+		this.ac = ac;
+		
+		this.nomeForma = "triangolare";
 	}
 	
 	public double perimetro() {

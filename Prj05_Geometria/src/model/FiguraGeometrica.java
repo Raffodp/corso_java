@@ -1,10 +1,16 @@
 package model;
 
-public class FiguraGeometrica {
+public abstract class FiguraGeometrica { // NON SI PUO' ISTANZIARE
 	
-	public double area() {
+	protected String nome;
+	protected String nomeForma;
+	
+	public abstract double area();
+	
+	
+	public String toString() {
 		
-		return 0;
+		return "La stanza di nome " + nome + ", di forma " + nomeForma + " ha una superficie di " + area();
 		
 	}
 
