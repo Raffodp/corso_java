@@ -25,7 +25,7 @@ public class ConcoCorrente {
 
 		if (somma >= 1) {
 			saldo += somma;
-			System.out.println(nomeCliente + " ha € " + saldo);
+			
 		} else
 
 			System.out.println(nomeCliente + " non puoi versare una somma inferiore a 1€");
@@ -35,7 +35,6 @@ public class ConcoCorrente {
 		if (somma < saldo) {
 
 			saldo -= somma;
-			System.out.println(nomeCliente + " ha € " + saldo);
 		} else
 
 			System.out.println(nomeCliente + " non hai i fondi necessare per il prelievo");
