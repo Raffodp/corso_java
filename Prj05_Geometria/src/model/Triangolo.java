@@ -1,7 +1,7 @@
 package model;
 
-public class Triangolo extends FiguraGeometrica {
-	
+public class Triangolo extends FiguraGeometrica{
+
 	private Punto a, b, c;
 	private Segmento ab, bc, ac;
 	
@@ -13,10 +13,11 @@ public class Triangolo extends FiguraGeometrica {
 		this.ab = new Segmento(a, b);
 		this.bc = new Segmento(b, c);
 		this.ac = new Segmento(a, c);
-		
-
 	
+		
+		
 	}
+	
 	public Triangolo(Segmento ab, Segmento bc, Segmento ac) {
 		
 		this.ab = ab;
@@ -24,21 +25,29 @@ public class Triangolo extends FiguraGeometrica {
 		this.ac = ac;
 		
 		this.nomeForma = "triangolare";
+		
+		
 	}
 	
 	public double perimetro() {
 		return 
-				this.ab.calcoloLunghezza() +
-				this.bc.calcoloLunghezza() +
-				this.ac.calcoloLunghezza() ;
+				this.ab.calcolaLunghezza() +
+				this.bc.calcolaLunghezza() +
+				this.ac.calcolaLunghezza() ;
 		
 	}
 	
 	public double area () {
 		double sp = this.perimetro()/2;
-		return Math.sqrt(sp *  (sp - ab.calcoloLunghezza()) 
-				*  (sp - bc.calcoloLunghezza())
-				*  (sp - ac.calcoloLunghezza()));
+		return Math.sqrt(sp *  (sp - ab.calcolaLunghezza()) 
+				*  (sp - bc.calcolaLunghezza())
+				*  (sp - ac.calcolaLunghezza()));
+	}
+
+	@Override
+	public void prova() {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	
