@@ -1,0 +1,2 @@
+Contatto [id=1, nome=raffaele, numero=3349177557]
+Contatto [id=2, nome=Gianluca, numero=3351239365]
