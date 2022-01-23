@@ -17,5 +17,11 @@ public class ColonninaElettrica extends DistributoreGas {
 	public void setKwRicarica(double kwRicarica) {
 		this.kwRicarica = kwRicarica;
 	}
-
+	
+	@Override
+	public String toString() {
+		
+		String s = super.toString();
+		return s;
+	}
 }

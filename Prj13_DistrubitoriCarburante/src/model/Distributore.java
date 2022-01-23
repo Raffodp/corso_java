@@ -50,7 +50,7 @@ public class Distributore {
 	@Override
 	public String toString() {
 		return "Il distributore " + nomeDistributore + " di " + indirizzoDistributore
-				+ " è stato caricato di: " + capBenzina + " litri di Benzina e "+ capDiesel + " litri di Diesel";
+				+ " è stato caricato di: " + capBenzina + " litri di Benzina "+ capDiesel + " litri di Diesel ";
 	}
 
 }

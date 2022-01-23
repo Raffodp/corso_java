@@ -18,6 +18,15 @@ public class DistributoreGas extends Distributore {
 
 	public void setCapGas(int capGas) {
 		this.capGas = capGas;
+		
+		
+	}
+
+	@Override
+	public String toString() {
+		
+		String s = super.toString()+capGas+" litri di Gas";
+		return s;
 	}
 
 }

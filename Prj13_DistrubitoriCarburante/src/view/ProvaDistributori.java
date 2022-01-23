@@ -9,42 +9,113 @@ import model.Distributore;
 public class ProvaDistributori {
 
 	public static void main(String[] args) {
-		
-		List<Distributore> input=leggiInput();
 
 		DistributoreCtrl ctrl = new DistributoreCtrl();
 		Scanner sc = new Scanner(System.in);
-        
-		
-		boolean gira = true;
 
-		while (gira) {
+		/*System.out.println("Inserisci un nome per il distributore: ");
+		String nomeDistributore = sc.nextLine();
+		System.out.println("Inserisci un indirizzo per il distributore: ");
+		String indirizzoDistributore = sc.nextLine();
+		System.out.println("Qual'è il tipo del distributore?: ");
+		String tipoDis = sc.nextLine();
+
+		if (tipoDis.contentEquals("ordinario")) {
+			ctrl.addDistributore(nomeDistributore, indirizzoDistributore, 0, 0);
+
+		} else if (tipoDis.contentEquals("gas")) {
+			ctrl.addDistributoreGas(nomeDistributore, indirizzoDistributore, 0, 0, 0);
+
+		} else if (tipoDis.contentEquals("elettrico")) {
+			ctrl.addColonninaElettrica(nomeDistributore, indirizzoDistributore, 0, 0, 0, 0);
+		} */
+
+		boolean cicla = true;
+
+		while (cicla) {
+			System.out.println();
 			System.out.print("Digita una scelta : ");
 			System.out.println();
-			System.out.println("1) Carica Distributore");
-			System.out.println("2) Rifornimento Auto");
-			System.out.println("3) Esci");
-			int sceltaUtente1 = sc.nextInt();
-			switch (sceltaUtente1) {
+			System.out.println("a) Aggiungi informazioni distributore");
+			System.out.println("b) Rifornimento distributore");
+			System.out.println("c) Rifornimento auto");
+			System.out.println("d) Esci");
+			String sceltaCaricaInfo = sc.nextLine();
+			switch (sceltaCaricaInfo) {
 
-			case 1:
-				System.out.print("Quale carburante vuoi caricare? Digita una scelta : ");
+			case "a":
+				System.out.println("Inserisci un nome per il distributore: ");
+				String nomeDistributore = sc.nextLine();
+				System.out.println("Inserisci un indirizzo per il distributore: ");
+				String indirizzoDistributore = sc.nextLine();
+				System.out.println("Qual'è il tipo del distributore? (ordinario, gas, elettrico): ");
+				String tipoDis = sc.nextLine();
+
+				if (tipoDis.contentEquals("ordinario")) {
+					ctrl.addDistributore(nomeDistributore, indirizzoDistributore, 0, 0);
+
+				} else if (tipoDis.contentEquals("gas")) {
+					ctrl.addDistributoreGas(nomeDistributore, indirizzoDistributore, 0, 0, 0);
+
+				} else if (tipoDis.contentEquals("elettrico")) {
+					ctrl.addColonninaElettrica(nomeDistributore, indirizzoDistributore, 0, 0, 0, 0);
+				}
+				break;
+
+
+				/*System.out.println("Inserisci i litri di Benzina che vuoi caricare");
+				int capBenzina = sc.nextInt();
+				System.out.println("Inserisci i litri di Diesel che vuoi caricare");
+				int capDiesel = sc.nextInt();
+				System.out.println("Inserisci i litri di Gas che vuoi caricare");
+				int capGas = sc.nextInt();
+				ctrl.addDistributore(nomeDistributore, indirizzoDistributore, capBenzina, capDiesel);
+				System.out.println(ctrl.getDistributori());*/
+
+			case "b":
+				System.out.print("Quale distributore vuoi caricare? ");
 				System.out.println();
-				System.out.println("1) Benzina");
-				System.out.println("2) Diesel");
-				System.out.println("3) Gas");
-				int sceltaUtente2 = sc.nextInt();
-				switch (sceltaUtente2) {
+				System.out.println("1) Ordinario");
+				System.out.println("2) Gas");
+				System.out.println("3) Elettrico");
+				String tipoCarb = sc.nextLine();
+				
+				if (tipoCarb.contentEquals("1")) {
+					int litriBenzina = sc.nextInt();
+					int litriDiesel = sc.nextInt();
+					int litriGas = sc.nextInt();
+					ctrl.addDistributore(nomeDistributore, indirizzoDistributore, litriBenzina, litriDiesel);
+
+				} else if (tipoCarb.contentEquals("2")) {
+					int litriBenzina = sc.nextInt();
+					int litriDiesel = sc.nextInt();
+					int litriGas = sc.nextInt();
+					ctrl.addDistributoreGas(nomeDistributore, indirizzoDistributore, litriBenzina, litriDiesel, litriGas);
+
+				} else if (tipoCarb.contentEquals("3")) {
+					int litriBenzina = sc.nextInt();
+					int litriDiesel = sc.nextInt();
+					int litriGas = sc.nextInt();
+					double kwCaricati = sc.nextDouble();
+					ctrl.addColonninaElettrica(nomeDistributore, indirizzoDistributore, litriBenzina, litriDiesel, litriGas, kwCaricati);
+				}
+				break;
+				
+			case "c": System.out.println(ctrl.getDistributori());
+				int sceltaUtente3 = sc.nextInt();
+				switch (sceltaUtente3) {
 
 				case 1:
 					System.out.print("Quanti litri di benzina vuoi caricare?");
 					int litriBenzina = sc.nextInt();
-					ctrl.addDistributore(null, null, litriBenzina, litriBenzina);
 					System.out.println(litriBenzina);
 
 					break;
 
 				case 2:
+					System.out.print("Quanti litri di diesel vuoi caricare?");
+					int litriDiesel = sc.nextInt();
+					System.out.println(litriDiesel);
 
 					break;
 
@@ -52,18 +123,12 @@ public class ProvaDistributori {
 					break;
 
 				case 4:
-					gira = false;
+					cicla = false;
 					break;
 				}
 			}
 		}
 	}
-
-	private static List<Distributore> leggiInput() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 }
 
 /*

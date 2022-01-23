@@ -16,25 +16,25 @@ public class DistributoreCtrl {
 		this.distributori = new ArrayList<>();
 	}
 
-	public void addDistributore(String Azip, String indirizzoDistributore, int capBenzina, int capDiesel) {
-		Distributore d = new Distributore("Azip", "Via rossi 15", capBenzina, capDiesel);
+	public void addDistributore(String nomeDistributore, String indirizzoDistributore, int capBenzina, int capDiesel) {
+		Distributore d = new Distributore(nomeDistributore, indirizzoDistributore, capBenzina, capDiesel);
 		this.distributori.add(d);
-	 	System.out.println(d);
+	 	System.out.println("Distributore Ordinario caricato con successo");
 	}
 
 	public void addDistributoreGas(String nomeDistributore, String indirizzoDistributore, int capBenzina, int capDiesel,
 			int capGas) {
 
-		Distributore d = new DistributoreGas("Azip", "Via rossi 15", capBenzina, capDiesel, capGas);
+		Distributore d = new DistributoreGas(nomeDistributore, indirizzoDistributore, capBenzina, capDiesel, capGas);
 		this.distributori.add(d);
-		System.out.println(d);
+		System.out.println("Distributore Gas caricato con successo");
 	}
 	public void addColonninaElettrica(String nomeDistributore, String indirizzoDistributore, int capBenzina, int capDiesel,
 			int capGas, double kwRicarica) {
 		
-		Distributore d = new ColonninaElettrica ("Azip", "Via rossi 15", capBenzina, capDiesel, capGas, kwRicarica);
+		Distributore d = new ColonninaElettrica (nomeDistributore, indirizzoDistributore, capBenzina, capDiesel, capGas, kwRicarica);
 		this.distributori.add(d);
-		System.out.println(d);
+		System.out.println("Colonnina Elettrica caricata con successo");
 	}
 	
 	public List<Distributore> getDistributori() {
