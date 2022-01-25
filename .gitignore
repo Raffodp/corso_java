@@ -40,3 +40,16 @@ hs_err_pid*
 Prj01_HelloWorld
 
 # my projects
+Prj08_Persona/src/model/ModelPersona.java
+Prj08_Persona/src/view/Persona.java
+Prj13_DistrubitoriCarburante/src/view/ProvaDistributori.java
+Prj14_GasStation/src/model/Electric.java
+Prj14_GasStation/src/model/FuelType.java
+Prj14_GasStation/src/model/Gas.java
+Prj14_GasStation/src/model/Hybrid.java
+Prj14_GasStation/src/model/Pump.java
+Prj14_GasStation/src/model/Station.java
+Prj14_GasStation/src/view/Console.java
+Prj08_Persona/src/model/ModelPersona.java
+Prj08_Persona/src/view/Persona.java
+Prj13_DistrubitoriCarburante/src/view/ProvaDistributori.java

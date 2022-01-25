@@ -23,28 +23,30 @@ public class MainView {
 		
 		
 		//Prendere gli input
-		List<InputObject> input=leggiInput();
-		
-		//Instaziare il controller
-		GeomController g=new GeomController();
-		
-		//Usarlo per verificare i dati
-		g.setInput(input);
-		
-		//Usarlo per fare la logica
-		g.calcola();
-		
-		//Mostrare gli output
-		List<String> out=g.getOutput();
-		for(String str:out) {
-			System.out.println(str);
+		List<InputObject> input;
+		try {
+			input = leggiInput();
+			//Instaziare il controller
+			GeomController g=new GeomController();
+			
+			//Usarlo per verificare i dati
+			g.setInput(input);
+			
+			//Usarlo per fare la logica
+			g.calcola();
+			
+			//Mostrare gli output
+			List<String> out=g.getOutput();
+			for(String str:out) {
+				System.out.println(str);
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-		
-		
-
 	}
 	
-	private static List<InputObject> leggiInput(){
+	private static List<InputObject> leggiInput() throws Exception{
 		List<InputObject> oggettiLetti= new ArrayList<>();
 		
 		Scanner sc=new Scanner(System.in);
@@ -78,6 +80,10 @@ public class MainView {
 				
 				System.out.println("Inserire lato2");
 				forma.setLato2(nextInt(sc));
+			    break;
+			    
+			default: 
+				throw new Exception();
 				
 			}
 			
