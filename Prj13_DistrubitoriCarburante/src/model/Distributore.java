@@ -7,6 +7,21 @@ public class Distributore {
 	private int capBenzina;
 	private int capDiesel;
 	
+	
+	public Distributore(String nomeDistributore, String indirizzoDistributore) {
+		super();
+		this.nomeDistributore = nomeDistributore;
+		this.indirizzoDistributore = indirizzoDistributore;
+	}
+	
+	
+	public Distributore(int capBenzina, int capDiesel) {
+		super();
+		this.capBenzina = capBenzina;
+		this.capDiesel = capDiesel;
+	}
+
+
 	public Distributore(String nomeDistributore, String indirizzoDistributore, int capBenzina, int capDiesel) {
 		super();
 		this.nomeDistributore = nomeDistributore;

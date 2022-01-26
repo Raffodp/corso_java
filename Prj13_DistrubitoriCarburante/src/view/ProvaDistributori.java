@@ -13,6 +13,7 @@ public class ProvaDistributori {
 
 		DistributoreCtrl ctrl = new DistributoreCtrl();
 		Distributore dis = new Distributore(null, null, 0, 0);
+		Distributore di = new Distributore(null, null);
 
 		Scanner sc = new Scanner(System.in);
 

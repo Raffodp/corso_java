@@ -5,7 +5,9 @@ import java.util.List;
 public class Main {
 
 	public static void main(String[] args) {
-
+		
+		Pizza pizza = new Pizza("integrale", "pomodoro", "mozzarella", "ananas");
+		
 		List<String> stringhe = new ArrayList<>();
 		List<String> linkedStringhe = new LinkedList<>();
 
