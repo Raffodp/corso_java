@@ -3,28 +3,42 @@ package control;
 import java.util.ArrayList;
 import java.util.List;
 
-import model.Calcolo;
-import model.Operazione;
+import model.*;
 
 public class operazioneCTRL {
-
-	List<String> output;
-	List<Calcolo> calcoli;
 	
-	public void setOperazioni(List<Operazione> input) {
-		
-		calcoli = new ArrayList<>();
-		
-		for(int i=0; i<input.size();i++) {
-			
-			Operazione op = input.get(i);
-			
-			switch() {
-				
-			
-			}
-		}
-		
+	List<Operazione> operazioni = new ArrayList<>();
+	
+	public void init() {
+		this.operazioni.add(new Somma());
+		this.operazioni.add(new Sottrazione());
+		this.operazioni.add(new Divisione());
+		this.operazioni.add(new Moltiplicazione());
 	}
+	
+	public String calcolo (double operando1, double operando2, char operatore) {
+			
+			switch(operatore) {
+				case '+' :
+					this.operazioni.get(0).setOperando1(operando1);
+					this.operazioni.get(0).setOperando2(operando2);
+					return this.operazioni.get(0).toString();
+				case '-' :
+					this.operazioni.get(1).setOperando1(operando1);
+					this.operazioni.get(1).setOperando2(operando2);
+					return this.operazioni.get(1).toString();
+				case '/' :
+					this.operazioni.get(2).setOperando1(operando1);
+					this.operazioni.get(2).setOperando2(operando2);
+					return this.operazioni.get(2).toString();
+				case '*' :
+					this.operazioni.get(3).setOperando1(operando1);
+					this.operazioni.get(3).setOperando2(operando2);
+					return this.operazioni.get(3).toString();
+			}
+			return null;
+		}
+	
+		
 
-}
+	}

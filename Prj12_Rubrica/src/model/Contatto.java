@@ -6,8 +6,8 @@ public class Contatto {
 	private static int counter = 1;
 	
 	private int id;
-	private String nome;
 	private String numero;
+	private String nome;
 	
 	// alt+shift+S per source>
 	public Contatto(String nome, String numero) {
