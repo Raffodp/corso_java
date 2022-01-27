@@ -1,8 +1,9 @@
 package model;
 
-public interface Calcolo {
+import eccezioni.CalcolatriceException;
 
-	// svolgo l'operazione con i due operandi indicata dal nome della classe.
-	public double operazione();
+public interface Calcolo {
+	
+	public double operazione() throws CalcolatriceException;
 
 }

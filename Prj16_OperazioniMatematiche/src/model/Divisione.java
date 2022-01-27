@@ -1,5 +1,7 @@
 package model;
 
+import eccezioni.CalcolatriceException;
+
 public class Divisione extends Operazione implements Calcolo {
 
 	public Divisione(double operando1, double operando2) {
@@ -10,24 +12,29 @@ public class Divisione extends Operazione implements Calcolo {
 	}
 	
 	public Divisione() {
-		super(0, 1,'/');
+		super(0, 0,'/');
 	}
 
 	@Override
-	public double operazione() throws ArithmeticException {
+	public double operazione() throws CalcolatriceException {
 		
 		try {
 			return super.getOperando1() / super.getOperando2();
         }
-        catch (ArithmeticException e) {
-            System.out.println("Divided by zero operation cannot be possible");
+        catch (Exception e) {
+        throw new CalcolatriceException("non è possibile dividere per zero");
+//            System.out.println("Non è possibile dividere per zero");
         }
 		
-		return 0;
 	}
 	
-	public String toString() {
-		return "Divisione : " + super.getOperando1() + " " +  super.getOperatore() + "  " + super.getOperando2() + " = " + this.operazione();
+	public String toString() {		
+		
+		try {
+			return "Divisione : " + super.getOperando1() + " " +  super.getOperatore() + "  " + super.getOperando2() + " = " + this.operazione();
+		} catch (Exception e) {
+			return e.getMessage();
+		}
 	}
 
 }
