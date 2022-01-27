@@ -3,6 +3,7 @@ package view;
 import java.util.Scanner;
 
 import control.operazioneCTRL;
+import eccezioni.CalcolatriceException;
 
 public class CalcolatriceView {
 
@@ -10,31 +11,32 @@ public class CalcolatriceView {
 
 		Scanner in = new Scanner(System.in);
 
-		boolean exit = false;
-
 		operazioneCTRL operazioneCTRL = new operazioneCTRL();
 		operazioneCTRL.init();
 
-		while (!exit) {
-			System.out.print("Cosa vuoi fare? \n ok per utilizzare la calcolatrice oppure digita uno spazio vuoto per uscire");
-			String esci = in.nextLine();
-			if (esci == "") {
-				exit = true;
-			} else {
+		boolean cicla = false;
+		while (!cicla) {
+			System.out.println("");
+			System.out.println(
+					"Cosa vuoi fare? \nDigita calc per utilizzare la calcolatrice oppure digita una stringa vuota per uscire");
+			String tipoDis = in.next();
+
+			if (tipoDis.equals("calc")) {
 				System.out.print("Inserire primo numero : \n");
 				double operando1 = nextDouble(in);
-
 				System.out.println("Inserisci operatore :");
 				char operatore = nextChar(in);
-
 				System.out.print("Inserire secondo numero : \n");
 				double operando2 = nextDouble(in);
 
-				System.out.println(operazioneCTRL.calcolo(operando1, operando2, operatore));
-
+				try {
+					System.out.println(operazioneCTRL.calcolo(operando1, operando2, operatore));
+				} catch (CalcolatriceException e) {
+					e.printStackTrace();
+					break;
+				}
 			}
 		}
-
 	}
 
 	public static double nextDouble(Scanner in) {
@@ -58,7 +60,7 @@ public class CalcolatriceView {
 				return result;
 			case '*':
 				return result;
-		    default: 
+			default:
 				System.out.print("Inserisci un operatore valido ( + - * / )\n");
 				result = in.next().charAt(0);
 			}
