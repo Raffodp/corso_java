@@ -1,8 +1,6 @@
 package model;
 
-
 public interface Calcolo {
-	
-	public double operazione();
 
+	public double operazione();
 }

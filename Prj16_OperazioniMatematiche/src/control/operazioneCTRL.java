@@ -29,9 +29,9 @@ public class operazioneCTRL {
 			this.operazioni.get(1).setOperando2(operando2);
 			return this.operazioni.get(1).toString();
 		case '/':
-			if(operando2 == 0) {
+			if (operando2 == 0) {
 				throw new CalcolatriceException("impossibile dividere un numero per zero");
-			}else
+			} else
 			this.operazioni.get(2).setOperando1(operando1);
 			this.operazioni.get(2).setOperando2(operando2);
 			return this.operazioni.get(2).toString();

@@ -15,13 +15,13 @@ public class CalcolatriceView {
 		operazioneCTRL.init();
 
 		boolean cicla = false;
-		while (!cicla) {
-			System.out.println("");
-			System.out.println(
-					"Cosa vuoi fare? \nDigita calc per utilizzare la calcolatrice oppure digita una stringa vuota per uscire");
-			String tipoDis = in.next();
-
-			if (tipoDis.equals("calc")) {
+		do {
+			System.out.print("Digita una scelta : ");
+			System.out.println();
+			System.out.println("1) Utilizza la Calcolatrice");
+			System.out.println("2) Esci");
+			int sceltaUtente = in.nextInt();
+			if (sceltaUtente == 1) {
 				System.out.print("Inserire primo numero : \n");
 				double operando1 = nextDouble(in);
 				System.out.println("Inserisci operatore :");
@@ -35,8 +35,10 @@ public class CalcolatriceView {
 					e.printStackTrace();
 					break;
 				}
+			}if (sceltaUtente == 2) {
+				break;
 			}
-		}
+		}while (!cicla);
 	}
 
 	public static double nextDouble(Scanner in) {

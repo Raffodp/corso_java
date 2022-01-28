@@ -8,7 +8,7 @@ public class Moltiplicazione extends Operazione implements Calcolo {
 		this.operando1 = operando1;
 		this.operando2 = operando2;
 	}
-	
+
 	public Moltiplicazione() {
 		super(0, 0, '*');
 	}
@@ -17,8 +17,9 @@ public class Moltiplicazione extends Operazione implements Calcolo {
 	public double operazione() {
 		return super.getOperando1() * super.getOperando2();
 	}
-	
+
 	public String toString() {
-		return "Moltiplicazione : " + super.getOperando1() + " " +  super.getOperatore() + "  " + super.getOperando2() + " = " + this.operazione();
+		return "Moltiplicazione : " + super.getOperando1() + " " + super.getOperatore() + "  " + super.getOperando2()
+				+ " = " + this.operazione();
 	}
 }

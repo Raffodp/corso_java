@@ -18,8 +18,12 @@
 <label>Nome:</label><input type="text" name="nome">
 <input type="submit">
 </form>
+<form action="redirect.jsp"><input type="submit"></form>
 
-
-
+<form action="divisione.jsp">
+Numero1: <input type="text" name="num1"/><br>
+Numero2: <input type="text" name="num2"/><br>
+<input type="submit" value="Dividi!"/>
+</form>
 </body>
 </html>
