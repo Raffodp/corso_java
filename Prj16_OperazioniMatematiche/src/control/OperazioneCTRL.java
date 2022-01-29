@@ -6,7 +6,7 @@ import java.util.List;
 import eccezioni.CalcolatriceException;
 import model.*;
 
-public class operazioneCTRL {
+public class OperazioneCTRL {
 
 	List<Operazione> operazioni = new ArrayList<>();
 

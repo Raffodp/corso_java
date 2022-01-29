@@ -2,7 +2,7 @@ package view;
 
 import java.util.Scanner;
 
-import control.operazioneCTRL;
+import control.OperazioneCTRL;
 import eccezioni.CalcolatriceException;
 
 public class CalcolatriceView {
@@ -11,7 +11,7 @@ public class CalcolatriceView {
 
 		Scanner in = new Scanner(System.in);
 
-		operazioneCTRL operazioneCTRL = new operazioneCTRL();
+		OperazioneCTRL operazioneCTRL = new OperazioneCTRL();
 		operazioneCTRL.init();
 
 		boolean cicla = false;
