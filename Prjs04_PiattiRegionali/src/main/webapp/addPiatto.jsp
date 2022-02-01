@@ -1,10 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Aggiungi piatto</title>
-</head>
-<body>
+<%@ include file="header.jsp" %>
+
 <h1>Aggiungi piatto</h1>
 
 <form action="piatti" method="post">
@@ -13,5 +8,6 @@
 <input type="text" name= "nomeRegione" placeholder="Scrivi il nome della regione">
 <input type="submit" value= "Add Piatto">
 </form>
-</body>
-</html>
+
+
+<%@ include file="footer.jsp" %>

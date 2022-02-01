@@ -8,6 +8,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import model.Piatto;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 @WebServlet ("/piatti")
@@ -26,9 +27,21 @@ public class PiattiMVC extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-		//aggiungo alla request l'attributo di nome elencoPiatti e con valore List<Piatto>
+		
+		if (request.getParameter("regione")!= null) {
+			List <Piatto> piatti = new ArrayList<>(); //contenitore vuoto
+			for(Piatto p : this.ctrl.getPiatti()){
+				if(p.getRegione().equals(request.getParameter("regione")))
+					piatti.add(p);
+			}
+			request.setAttribute("elencoPiatti", piatti);
+			
+		} else {
+			//aggiungo alla request l'attributo di nome elencoPiatti e con valore List<Piatto>
 		request.setAttribute("elencoPiatti", this.ctrl.getPiatti());
+		}
+
+		
 		//chiamo la pagina jsp e le passo la richiesta con il nuovo attributo appena inserito
 		request.getRequestDispatcher("elenco.jsp").forward(request, response);
 		

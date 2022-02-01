@@ -1,5 +1,7 @@
 <%@page import="model.Piatto"%>
 <%@page import="java.util.List"%>
+
+<%@ include file="header.jsp" %>
 <h1>Piatti regionali</h1>
 
 <table>
@@ -13,8 +15,10 @@
 <tr>
 
     <td><%=p.getNome() %></td>
-    <td><%=p.getRegione() %></td>
+    <td><a href="?regione=<%= p.getRegione() %>"><%= p.getRegione() %></a></td>
 
 </tr>
 <% } %>
 </table>
+
+<%@ include file="footer.jsp" %>
