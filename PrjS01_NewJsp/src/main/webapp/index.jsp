@@ -31,6 +31,7 @@
 			type="text" name="num2" /><br> <input type="submit"
 			value="Dividi!" />
 	</form>
+	
 
 	<br>
 	<form action="controller">
@@ -39,6 +40,27 @@
 		<label>Cognome da passare al controller:</label> <input type="text"
 			name="cognome"><br> 
 		<input type="submit" value="Invia al controller" />
+		<%@ 
+		
+		include file = "/index.html"
+		 %>
+		 
+		 <%@ 
+		
+		include file = "/contenuto.html"
+		 %>
+		
+		<%=
+		stampaNome()
+		%>
+		
+		
+		<%!
+		//dichiarare delle variabili e dei metodi all'interno della jsp come se fossimo all'interno della nostra classe
+		private String stampaNome(){
+		   return "<h3> ciao </h3>";
+		}
+		%>
 	</form>
 </body>
 </html>
