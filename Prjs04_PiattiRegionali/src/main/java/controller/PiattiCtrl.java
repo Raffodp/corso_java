@@ -31,10 +31,7 @@ public class PiattiCtrl {
 		for (Piatto p : this.piatti) {
 			if (p.getRegione().equals(regione))
 				piattiRegione.add(p);
-
 		}
-
 		return piattiRegione;
-
 	}
 }
