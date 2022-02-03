@@ -2,7 +2,7 @@
 <%@page import="java.util.List"%>
 
 <%@ include file="header.jsp" %>
-
+<%@ include file ="menu.jsp" %>
 <h1>Genere Serie tv</h1>
 
 <table>
@@ -20,7 +20,7 @@ for(SerieTv s: serie){
 %>
 <tr>
 
-    <td><%=s.getNome() %></td>
+    <td><a href="?dettaglio=<%=s.getDescrizione() %>"><%= s.getDescrizione() %></a></td>
     <td><a href="?genere=<%= s.getGenere() %>"><%= s.getGenere() %></a></td>
      <td><%=s.getDescrizione() %></td>
 </tr>

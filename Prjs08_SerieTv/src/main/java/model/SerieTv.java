@@ -5,19 +5,25 @@ import java.util.List;
 
 public class SerieTv {
 	
+	private int id;
 	private String nome;
 	private String genere;
 	private String descrizione;
 	private List<String> cast;
+	private String foto;
 	
 
-	public SerieTv(String nome, String genere, String descrizione) {
+	public SerieTv(int id, String nome, String genere, String descrizione, String foto) {
+		
+		this.id = id;
 		
 		this.nome = nome;
 		
 		this.genere = genere;
 		
 		this.descrizione = descrizione;
+		
+		this.foto = foto;
 		
 		this.cast = new ArrayList<String>();
 	}
@@ -54,9 +60,20 @@ public class SerieTv {
 		this.cast = cast;
 	}
 
-	@Override
-	public String toString() {
-		return "Serie tv [nome=" + nome + ", genere=" + genere + ", descrizione=" + descrizione + ", cast= " + cast + "]";
+	public String getFoto() {
+		return foto;
+	}
+
+	public void setFoto(String foto) {
+		this.foto = foto;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 	
 }
