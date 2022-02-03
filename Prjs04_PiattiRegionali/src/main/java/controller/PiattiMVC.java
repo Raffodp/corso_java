@@ -23,9 +23,6 @@ public class PiattiMVC extends HttpServlet {
         System.out.println("Ho creato la servlet e inizializzato il controller dei piatti");
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		if (request.getParameter("regione")!= null) {
@@ -56,15 +53,11 @@ public class PiattiMVC extends HttpServlet {
 		response.getWriter().append(sb.toString()); */
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		if(request.getParameter("nomePiatto")!=null && request.getParameter("nomeRegione")!= null) {
 		   String nome = request.getParameter("nomePiatto");
 		   String regione = request.getParameter("nomeRegione");
-		   
 		   this.ctrl.addPiatto(nome, regione);
 		}
 		   

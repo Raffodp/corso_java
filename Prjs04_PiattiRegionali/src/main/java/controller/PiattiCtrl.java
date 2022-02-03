@@ -17,7 +17,7 @@ public class PiattiCtrl {
 
 		Piatto p = new Piatto(nome, regione);
 
-		this.piatti.add(p);
+		piatti.add(p);
 	}
 
 	public List<Piatto> getPiatti() {

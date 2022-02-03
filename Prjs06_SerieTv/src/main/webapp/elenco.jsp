@@ -5,17 +5,19 @@
 
 
 <h1>Elenco Serie TV</h1>
+
 <table>
 <tr>
-<th>Nome serie TV</th>
-<th>Genere</th>
-<th>Descrizione</th>
+    <th>Nome serie TV</th>
+    <th>Genere</th>
+    <th>Descrizione</th>
 </tr>
-<% List<SerieTv> listaSerie = (List<SerieTv>) request.getAttribute("listaSerie");%>
-<% for(SerieTv s : listaSerie){ %>
+<% List<SerieTv> serie = (List<SerieTv>) request.getAttribute("listaSerie");%>
+<% for(SerieTv s: serie){ %>
 <tr>
-<td><a href="?genere=<%= s.getNome() %>"><%= s.getGenere() %><%= s.getDescrizione() %></a></td>
-
+<td><%=s.getNome() %></td>
+<td><a href="?genere=<%= s.getGenere() %>"><%= s.getGenere() %></a></td>
+<td><%=s.getDescrizione() %></td>
 </tr>
 
 <% } %>
