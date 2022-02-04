@@ -9,7 +9,7 @@
 		<th>Genere</th>
 		<th>Nome</th>
 		<th>Descrizione</th>
-		<th>Foto</th>
+		<th>ID</th>
 	</tr>
 	<% List<SerieTv> listaDettaglio =(List<SerieTv>)request.getAttribute("dettaglio"); %>
 	<% for (SerieTv s : listaDettaglio){ %>
@@ -17,7 +17,8 @@
 		<td><%=s.getNome()%></td>
 		<td><%=s.getGenere()%></td>
 		<td><%=s.getDescrizione()%></td>
-		<td><a href="?id=<%= s.getId() %>"><%= s.getId() %></a></td>	
+		<td><a href="?id=<%= s.getId() %>"><%= s.getId() %></a></td>
+		<td><img src="<%=s.getFoto()%>" width="100" height="132"></td>	
 	</tr>
 	<% } %>
 

@@ -5,5 +5,6 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Serie TV</title>
+<link rel="stylesheet" href="style/style.css">
 </head>
 <body>
