@@ -1,18 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
-<form method="post" action="aggiungiProdotto">
-     <input type="text" name="nome">
-     <input type="number" step= 0.01 name="prezzo">
-     <input type="text" name="reparto">
-     <input type="submit" value="Aggiungi!">
-</form>
-
-</body>
-</html>
+<%@ include file="header.jsp"%>
+<form class="new-task-form" method="post" action="aggiungiProdotto">
+	<input id="new-task-input" type="text" name="nome"> <input
+		id="new-task-input" type="number" step= 0.01 name="prezzo"> <input
+		id="new-task-input" type="text" name="reparto"> <input
+		id="new-task-submit" type="submit" value="Aggiungi!">
+	<%@ include file="footer.jsp"%>

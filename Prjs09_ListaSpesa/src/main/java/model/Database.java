@@ -11,9 +11,9 @@ public class Database {
 
 	private Database() {
 		listaSpesa = new ArrayList<>();
-		listaSpesa.add(new Prodotto(0, "Banana", 1.00,"Frutta"));
-		listaSpesa.add(new Prodotto(1, "Cereali", 2.00 ,"Scaffale"));
-		listaSpesa.add(new Prodotto(2, "Carota", 0.70 , "Verdura"));
+		listaSpesa.add(new Prodotto(0, "Banana", 1.50,"Frutta"));
+		listaSpesa.add(new Prodotto(1, "Cereali", 2.25 ,"Scaffale"));
+		listaSpesa.add(new Prodotto(2, "Carota", 5.80 , "Verdura"));
 
 	}
 
