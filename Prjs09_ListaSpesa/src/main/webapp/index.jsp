@@ -1,5 +1,5 @@
 <%@ include file="header.jsp"%>
      <%
-        response.sendRedirect("listaSpesa"); //va nella servlet
+        response.sendRedirect("login.jsp"); //va nella servlet
      %>
 <%@ include file="footer.jsp"%>

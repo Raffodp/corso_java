@@ -8,7 +8,6 @@
 </head>
 <body>
 
-      <%@ include file="menu.jsp" %>
       <h1> Login </h1>
       
       <form action= "login " method="post">

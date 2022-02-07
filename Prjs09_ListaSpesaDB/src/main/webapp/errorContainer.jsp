@@ -4,11 +4,9 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Login</title>
+<title>Insert title here</title>
 </head>
 <body>
-
-      <h1>Homepage</h1>
-
+<h1 style= "text-color: red"><%=request.getAttribute("errorMessage")%></h1>
 </body>
 </html>
