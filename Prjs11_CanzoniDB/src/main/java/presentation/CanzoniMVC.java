@@ -18,7 +18,8 @@ public class CanzoniMVC extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.getWriter().append(this.ctrl.getCanzoni().toString());
+		request.setAttribute("listaCanzoni", this.ctrl.getCanzoni());
+		request.getRequestDispatcher("lista.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -32,4 +32,14 @@ public class CanzoniCTRL {
 		}
 		return null;
 	}
+
+	public void addCanzone(Canzone c) {
+		try {
+			this.repo.addCanzone(c);
+			System.out.println("Aggiunta la canzone: "+ c);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+	}
 }
