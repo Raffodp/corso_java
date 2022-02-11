@@ -30,12 +30,12 @@ public class DelAutore extends HttpServlet {
 		try {
 			boolean AutoreCancellati = controller.deleteAutore(idAutore);
 			if (AutoreCancellati == true)
-				request.setAttribute("avvisoMessaggio", "Studente cancellato con successo");
+				request.setAttribute("avvisoMessaggio", "autore cancellato con successo");
 			else
-				request.setAttribute("avvisoMessaggio", "Anomalia, cancellati " + AutoreCancellati + " records.");
+				request.setAttribute("avvisoMessaggio", "Anomalia, autore cancellato = " + AutoreCancellati);
 		} catch (SQLException e) {
-			e.printStackTrace();
-			
+			request.setAttribute("errorMessage", e.getMessage());
+
 		}
 		request.getRequestDispatcher("listaAutori").forward(request, response);
 	}

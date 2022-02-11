@@ -1,55 +1,42 @@
 <%@page import="model.Libro"%>
 <%@page import="java.util.List"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
- 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
- 
-</head>
-<body>
- <%@ include file="menu.jsp"%>
- 
-	<table>
+<%@ include file="header.jsp"%>
+<%@ include file="bootstrap.html"%>
+<%@ include file="navbar.html"%>
+	<table class="table table-striped">
 	<tr> 
-		<th>ID</th>	
-		<th>Titolo</th>
-		<th>Prezzo</th>
-		<th>Pagine</th>	
+		<th class="table-light">ID</th>	
+		<th class="table-light">Titolo</th>
+		<th class="table-light">Prezzo</th>
+		<th class="table-light">Pagine</th>	
+		<th class="table-light">Elimina</th>	
+		<th class="table-light">Modifica</th>	
 	</tr>
  
-	<%
- 		List<Libro> lista = (List<Libro>) request.getAttribute("listaLibro");
-		if(lista!=null){
-			for(Libro p : lista){
-				out.print("<tr>");
-				out.print("<td>" + p.getId() + 	 "</td>");
-				out.print("<td>" + p.getTitolo() + "</td>");
-				out.print("<td>" + p.getPrezzo() + "</td>");
-				out.print("<td>" + p.getPagine() + "</td>");
- 
-				out.print("<td>" + 
-							"<form method = \"post\" action=\"cancellaLibro?deleteId=" + p.getId() + "\">" +
-							"<input type=\"submit\">Elimina</input>" +
-							"</form> </td>");
-				out.print("<td>" + 
-						"<form method = \"get\" action=\"modificaLibro\">"+
-						"<input type=\"text\" hidden name=\"modificaId\" value=\""+p.getId()+ "\" >" +
-						"<input type=\"submit\">Modifica</input>" +
-						"</form> </td>");
-				out.print("</tr>");
-			}
+
+ 		<%	List<Libro> lista = (List<Libro>) request.getAttribute("listaLibro"); %>
+		<% if(lista!=null){
+			for(Libro l : lista){ %>
+				<tr>
+				<td><%=l.getId() %></td>
+				<td><%=l.getTitolo() %></td>
+				<td><%=l.getPrezzo() %></td>
+				<td><%=l.getPagine() %></td>
+                <td>
+				<form method = "post" action="cancellaLibro?deleteId=<%= l.getId() %>">
+				<input type="submit" value="Elimina">
+				</form></td>
+		        <td>
+				<form method ="get" action="modificaLibro">
+				<input type="text" hidden name="modificaId" value="<%= l.getId() %>">
+				<input type="submit" value="Modifica">
+				</form> </td>
+				</tr>
+				
+		<%	}
 		}else{
 			out.print("<br> Non ci sono libri in lista <br>");
-		}
- 
- 
-	%>
- 
+		}  %>
 	</table>
  
 	<% 
@@ -58,6 +45,4 @@
 		out.print("<script>alert(\""+msg+"\");</script>");
 	}
 	%>
- 
-</body>
-</html>
+ <%@ include file="footer.jsp"%>

@@ -4,6 +4,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import model.Autore;
+import model.Libro;
 import repository.Database;
 
 public class AutoreController {
@@ -23,8 +24,26 @@ public class AutoreController {
 		return instance;
 	}
 
-	public List<Autore> getAllAutori() throws SQLException {
-		return db.getAllAutori();
+	public boolean insertAutore(int id, String nome, String cognome, String nazionalita) throws SQLException {
+		Autore daInserire = new Autore();
+
+		daInserire.setId(id);
+		daInserire.setNome(nome);
+		daInserire.setCognome(cognome);
+		daInserire.setNazionalita(nazionalita);
+
+		return db.insertAutore(daInserire);
+	}
+
+	public int updateAutore(int id, String nome, String cognome, String nazionalita) throws SQLException {
+		Autore daAggiornare = new Autore();
+
+		daAggiornare.setId(id);
+		daAggiornare.setNome(nome);
+		daAggiornare.setCognome(cognome);
+		daAggiornare.setNazionalita(nazionalita);
+
+		return db.updateAutore(daAggiornare);
 	}
 
 	public boolean deleteAutore(int idAutore) throws SQLException {
@@ -36,5 +55,13 @@ public class AutoreController {
 			db.deleteAutore(idAutore);
 			return true;
 		}
+	}
+	
+	public Autore getAutoreById(int id) throws SQLException {
+		return db.getAutoreById(id);
+	}
+
+	public List<Autore> getAllAutori() throws SQLException {
+		return db.getAllAutori();
 	}
 }

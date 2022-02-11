@@ -1,55 +1,41 @@
 <%@page import="model.Autore"%>
 <%@page import="java.util.List"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
- 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
- 
-</head>
-<body>
-<%@ include file="menu.jsp"%>
- 
-	<table>
+ <%@ include file="header.jsp"%>
+ <%@ include file="bootstrap.html"%>
+ <%@ include file="navbar.html"%>
+	<table class="table table-striped">
 	<tr> 
-		<th>ID</th>	
-		<th>Nome</th>
-		<th>Cognome</th>
-		<th>Nazionalità</th>	
+		<th class="table-light">ID</th>	
+		<th class="table-light">Nome</th>
+		<th class="table-light">Cognome</th>
+		<th class="table-light">Nazionalità</th>	
+		<th class="table-light">Elimina</th>	
+		<th class="table-light">Modifica</th>	
 	</tr>
  
-	<%
- 		List<Autore> lista = (List<Autore>) request.getAttribute("listaAutori");
-		if(lista!=null){
-			for(Autore p : lista){
-				out.print("<tr>");
-				out.print("<td>" + p.getId() + 	 "</td>");
-				out.print("<td>" + p.getNome() + "</td>");
-				out.print("<td>" + p.getCognome() + "</td>");
-				out.print("<td>" + p.getNazionalita() + "</td>");
- 
-				out.print("<td>" + 
-							"<form method = \"post\" action=\"delAutore?idAutore=" + p.getId() + "\">" +
-							"<input type=\"submit\">Elimina</input>" +
-							"</form> </td>");
-				out.print("<td>" + 
-						"<form method = \"get\" action=\"modificaAutore\">"+
-						"<input type=\"text\" hidden name=\"modificaId\" value=\""+p.getId()+ "\" >" +
-						"<input type=\"submit\">Modifica</input>" +
-						"</form> </td>");
-				out.print("</tr>");
-			}
+
+ 		<%	List<Autore> lista = (List<Autore>) request.getAttribute("listaAutori"); %>
+		<% if(lista!=null){
+			for(Autore l : lista){ %>
+				<tr>
+				<td><%=l.getId() %></td>
+				<td><%=l.getNome() %></td>
+				<td><%=l.getCognome() %></td>
+				<td><%=l.getNazionalita() %></td>
+                <td>
+				<form method = "post" action="delAutore?idAutore=<%= l.getId() %>">
+				<input type="submit" value="Elimina">
+				</form></td>
+		        <td>
+				<form method ="get" action="modificaAutore">
+				<input type="text" hidden name="modificaId" value="<%= l.getId() %>">
+				<input type="submit" value="Modifica">
+				</form> </td>
+				</tr>
+		<%	}
 		}else{
-			out.print("<br> Non ci sono autori in lista <br>");
-		}
- 
- 
-	%>
- 
+			out.print("<br> Non ci sono libri in lista <br>");
+		}  %>
 	</table>
  
 	<% 
@@ -58,6 +44,4 @@
 		out.print("<script>alert(\""+msg+"\");</script>");
 	}
 	%>
- 
-</body>
-</html>
+ <%@ include file="footer.jsp"%>

@@ -5,8 +5,8 @@ public class Libro {
 	private String titolo;
 	private double prezzo;
 	private int pagine;
-	
-	public Libro(int id, String titolo, double prezzo, int pagine) {
+
+	public Libro(int id, String titolo, double prezzo, int pagine, int editoreId) {
 
 		this.id = id;
 		this.titolo = titolo;
@@ -48,6 +48,5 @@ public class Libro {
 	public void setPagine(int pagine) {
 		this.pagine = pagine;
 	}
-	
 
 }
