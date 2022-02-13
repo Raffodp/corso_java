@@ -1,8 +1,9 @@
 <%@page import="model.Autore"%>
 <%@page import="java.util.List"%>
- <%@ include file="header.jsp"%>
- <%@ include file="bootstrap.html"%>
- <%@ include file="navbar.html"%>
+ <%@ include file="bootstrap/header.jsp"%>
+ <%@ include file="bootstrap/bootstrap.html"%>
+ <%@ include file="bootstrap/navbar.html"%>
+ 
 	<table class="table table-striped">
 	<tr> 
 		<th class="table-light">ID</th>	
@@ -34,14 +35,8 @@
 				</tr>
 		<%	}
 		}else{
-			out.print("<br> Non ci sono libri in lista <br>");
+			out.print("<br> Non ci sono autori in lista <br>");
 		}  %>
 	</table>
- 
-	<% 
-	String msg=(String)request.getAttribute("avvisoMessaggio");
-	if(msg!=null){
-		out.print("<script>alert(\""+msg+"\");</script>");
-	}
-	%>
- <%@ include file="footer.jsp"%>
+ <%@ include file="bootstrap/alertContainer.jsp"%>
+ <%@ include file="bootstrap/footer.jsp"%>

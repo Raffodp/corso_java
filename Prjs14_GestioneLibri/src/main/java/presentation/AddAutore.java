@@ -37,6 +37,7 @@ public class AddAutore extends HttpServlet {
 
 			try {
 				this.ctrl.insertAutore(autoreId, nome, cognome, nazionalita);
+				request.setAttribute("avvisoMessaggio", "Autore aggiunto con successo!");
 			} catch (SQLException e) {
 				e.printStackTrace();
 				request.setAttribute("avvisoMessaggio", e.getMessage());

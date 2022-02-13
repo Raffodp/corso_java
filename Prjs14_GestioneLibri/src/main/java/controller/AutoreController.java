@@ -34,7 +34,6 @@ public class AutoreController {
 
 		return db.insertAutore(daInserire);
 	}
-
 	public int updateAutore(int id, String nome, String cognome, String nazionalita) throws SQLException {
 		Autore daAggiornare = new Autore();
 
@@ -46,15 +45,13 @@ public class AutoreController {
 		return db.updateAutore(daAggiornare);
 	}
 
-	public boolean deleteAutore(int idAutore) throws SQLException {
+	public int deleteAutore(int idAutore) throws SQLException {
 
-		if (db.getAutoriInAutoriLibri(idAutore) > 0) {
-			return false;
-		} else {
-
-			db.deleteAutore(idAutore);
-			return true;
-		}
+		Autore daCancellare = new Autore();
+		
+		daCancellare.setId(idAutore);
+		
+		return db.deleteAutore(idAutore);
 	}
 	
 	public Autore getAutoreById(int id) throws SQLException {

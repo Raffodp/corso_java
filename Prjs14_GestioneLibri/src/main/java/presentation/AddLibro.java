@@ -37,8 +37,10 @@ public class AddLibro extends HttpServlet {
 
 			try {
 				this.ctrl.insertLibro(libroId, titolo, prezzo, pagine);
+				request.setAttribute("avvisoMessaggio", "Libro aggiunto con successo!");
 			} catch (SQLException e) {
 				e.printStackTrace();
+				request.setAttribute("avvisoMessaggio", e.getMessage());
 			}
 			request.getRequestDispatcher("listaLibri").forward(request, response);
 		}

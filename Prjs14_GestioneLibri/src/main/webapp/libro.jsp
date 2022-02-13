@@ -1,8 +1,8 @@
 <%@page import="model.Libro"%>
 <%@page import="java.util.List"%>
-<%@ include file="header.jsp"%>
-<%@ include file="bootstrap.html"%>
-<%@ include file="navbar.html"%>
+<%@ include file="bootstrap/header.jsp"%>
+<%@ include file="bootstrap/bootstrap.html"%>
+<%@ include file="bootstrap/navbar.html"%>
 	<table class="table table-striped">
 	<tr> 
 		<th class="table-light">ID</th>	
@@ -20,7 +20,7 @@
 				<tr>
 				<td><%=l.getId() %></td>
 				<td><%=l.getTitolo() %></td>
-				<td><%=l.getPrezzo() %></td>
+				<td><%=l.getPrezzo() %>&euro;</td>
 				<td><%=l.getPagine() %></td>
                 <td>
 				<form method = "post" action="cancellaLibro?deleteId=<%= l.getId() %>">
@@ -39,10 +39,5 @@
 		}  %>
 	</table>
  
-	<% 
-	String msg=(String)request.getAttribute("avvisoMessaggio");
-	if(msg!=null){
-		out.print("<script>alert(\""+msg+"\");</script>");
-	}
-	%>
- <%@ include file="footer.jsp"%>
+ <%@ include file="bootstrap/alertContainer.jsp"%>
+ <%@ include file="bootstrap/footer.jsp"%>

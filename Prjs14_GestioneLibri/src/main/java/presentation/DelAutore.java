@@ -26,16 +26,15 @@ public class DelAutore extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		int idAutore = Integer.parseInt(request.getParameter("idAutore"));
-		try {
-			boolean AutoreCancellati = controller.deleteAutore(idAutore);
-			if (AutoreCancellati == true)
-				request.setAttribute("avvisoMessaggio", "autore cancellato con successo");
-			else
-				request.setAttribute("avvisoMessaggio", "Anomalia, autore cancellato = " + AutoreCancellati);
-		} catch (SQLException e) {
-			request.setAttribute("errorMessage", e.getMessage());
-
+		if (request.getParameter("idAutore") != null) {
+			int idAutore = Integer.parseInt(request.getParameter("idAutore"));
+			try {
+				this.controller.deleteAutore(idAutore);
+				request.setAttribute("avvisoMessaggio", "Autore cancellato con successo!");
+			} catch (SQLException e) {
+				e.printStackTrace();
+				request.setAttribute("avvisoMessaggio", e.getMessage());
+			}
 		}
 		request.getRequestDispatcher("listaAutori").forward(request, response);
 	}

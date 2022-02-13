@@ -50,12 +50,8 @@ public class ModLibro extends HttpServlet {
 			double prezzo = Double.parseDouble(request.getParameter("prezzo"));
 			int pagine = Integer.parseInt(request.getParameter("pagine"));
 
-			int nRigheAggiornate = controller.updateLibro(id, titolo, prezzo, pagine);
-
-			if (nRigheAggiornate == 1)
-				request.setAttribute("avvisoMessaggio", "Libro aggiornato con successo");
-			else
-				request.setAttribute("avvisoMessaggio", "Anomalia, aggiornati " + nRigheAggiornate + " records.");
+			controller.updateLibro(id, titolo, prezzo, pagine);
+			request.setAttribute("avvisoMessaggio","Libro aggiornato con successo!");
 
 		} catch (Exception e) {
 			e.printStackTrace();

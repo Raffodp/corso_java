@@ -14,29 +14,25 @@ import controller.AutoreLibroController;
 @WebServlet("/cancellaAutoreLibro")
 public class DelAutoreLibro extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	
+
 	private AutoreLibroController ctrl;
-	
+
 	public DelAutoreLibro() throws ClassNotFoundException, SQLException {
 		ctrl = new AutoreLibroController();
 	}
 
-	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		try {
-			int idLibro=Integer.parseInt(request.getParameter("deleteId"));
-			int nRecordCancellati=ctrl.deleteAutoreLibro(idLibro);
-			if(nRecordCancellati==1)
-				request.setAttribute("avvisoMessaggio", "Relazione Autore-Libro cancellata con successo");
-			else
-				request.setAttribute("avvisoMessaggio", "Anomalia, non è stata cancellata alcuna relazione");
-			
-		}catch(Exception e) {
-			e.printStackTrace();
-			request.setAttribute("avvisoMessaggio", e.getMessage());
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		if (request.getParameter("deleteId") != null) {
+			int idLibro = Integer.parseInt(request.getParameter("deleteId"));
+			try {
+				ctrl.deleteAutoreLibro(idLibro);
+				request.setAttribute("avvisoMessaggio", "Associazione cancellata con successo!");
+			} catch (SQLException e) {
+				e.printStackTrace();
+				request.setAttribute("avvisoMessaggio", e.getMessage());
+			}
 		}
-		
 		request.getRequestDispatcher("listaAutoriLibri").forward(request, response);
 	}
-
 }

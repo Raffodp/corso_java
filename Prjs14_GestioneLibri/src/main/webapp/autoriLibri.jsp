@@ -1,8 +1,8 @@
 <%@page import="model.AutoreLibro"%>
 <%@page import="java.util.List"%>
-<%@ include file="header.jsp"%>
-<%@ include file="bootstrap.html"%>
-<%@ include file="navbar.html"%>
+<%@ include file="bootstrap/header.jsp"%>
+<%@ include file="bootstrap/bootstrap.html"%>
+<%@ include file="bootstrap/navbar.html"%>
 	<table class="table table-striped">
 	<tr> 
 		<th class="table-light">ID Autore</th>	
@@ -11,7 +11,6 @@
 		<th class="table-light">Titolo</th>	
 		<th class="table-light">Prezzo</th>	
 		<th class="table-light">Elimina</th>	
-		<th class="table-light">Modifica</th>	
 	</tr>
  
 
@@ -23,7 +22,7 @@
 				<td><%=al.getAlLibroId() %></td>
 				<td><%=al.getaCognome() %></td>
 				<td><%=al.getlTitolo() %></td>
-				<td><%=al.getlPrezzo() %></td>
+				<td><%=al.getlPrezzo() %>&euro;</td>
                 <td>
 				<form method = "post" action="cancellaAutoreLibro?deleteId=<%= al.getAlLibroId()%>">
 				<input type="submit" value="Elimina">
@@ -31,14 +30,9 @@
 				</tr>
 		<%	}
 		}else{
-			out.print("<br> Non ci sono libri in lista <br>");
+			out.print("<br> Non ci sono relazioni autore-libro in lista <br>");
 		}  %>
 	</table>
  
-	<% 
-	String msg=(String)request.getAttribute("avvisoMessaggio");
-	if(msg!=null){
-		out.print("<script>alert(\""+msg+"\");</script>");
-	}
-	%>
- <%@ include file="footer.jsp"%>
+ <%@ include file="bootstrap/alertContainer.jsp"%>
+ <%@ include file="bootstrap/footer.jsp"%>

@@ -35,8 +35,10 @@ public class AddAutoreLibro extends HttpServlet {
 
 			try {
 				this.ctrl.insertAutoreLibroId(autoreId, libroId);
+				request.setAttribute("avvisoMessaggio", "Associazione creata con successo!");
 			} catch (SQLException e) {
 				e.printStackTrace();
+				request.setAttribute("avvisoMessaggio", e.getMessage());
 			}
 			request.getRequestDispatcher("listaAutoriLibri").forward(request, response);
 		}

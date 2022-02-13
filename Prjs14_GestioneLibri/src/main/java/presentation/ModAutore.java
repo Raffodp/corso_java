@@ -47,18 +47,13 @@ public class ModAutore extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		try {
-			int id = Integer.parseInt(request.getParameter("id"));
+			int id = Integer.parseInt(request.getParameter("autoreId"));
 			String nome = request.getParameter("nome");
 			String cognome = request.getParameter("cognome");
 			String nazionalita = request.getParameter("nazionalita");
 
-			int nRigheAggiornate = controller.updateAutore(id, nome, cognome, nazionalita);
-
-			if (nRigheAggiornate == 1)
-				request.setAttribute("avvisoMessaggio", "Autore aggiornato con successo");
-			else
-				request.setAttribute("avvisoMessaggio", "Anomalia, aggiornati " + nRigheAggiornate + " records.");
-
+			this.controller.updateAutore(id, nome, cognome, nazionalita);
+			request.setAttribute("avvisoMessaggio", "Autore aggiornato con successo!");
 		} catch (Exception e) {
 			e.printStackTrace();
 			request.setAttribute("avvisoMessaggio", e.getMessage());
