@@ -9,11 +9,11 @@
    <div class="container-sm">
       <div class="input-group mb-3">
          <span class="input-group-text" id="basic-addon1">ID autore</span>
-         <input type="number" required name="autoreId" class="form-control" placeholder="35" aria-label="35" aria-describedby="basic-addon1">
+         <input type="number" required name="autoreId" class="form-control" placeholder="35">
       </div>
       <div class="input-group mb-3">
          <span class="input-group-text" id="basic-addon1">ID libro</span>
-         <input type="number" name="libroId" class="form-control" placeholder="22" aria-label="22" aria-describedby="basic-addon1">
+         <input type="number" name="libroId" class="form-control" placeholder="22">
       </div>
       <input class="btn btn-outline-dark" type="submit" value="Invia">
       <a class="btn btn-outline-dark" href="listaAutori" role="button">Indietro</a>

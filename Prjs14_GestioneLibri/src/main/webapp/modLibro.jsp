@@ -1,8 +1,6 @@
 <%@ include file="bootstrap/header.jsp"%>
 <%@ include file="bootstrap/bootstrap.html"%>
 <%@ include file="bootstrap/navbar.html"%>
-
-
 &nbsp;
 <h2 class="text-center">Modifica il libro:</h2>
 &nbsp;

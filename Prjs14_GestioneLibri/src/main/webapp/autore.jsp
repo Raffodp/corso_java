@@ -13,8 +13,6 @@
 		<th class="table-light">Elimina</th>	
 		<th class="table-light">Modifica</th>	
 	</tr>
- 
-
  		<%	List<Autore> lista = (List<Autore>) request.getAttribute("listaAutori"); %>
 		<% if(lista!=null){
 			for(Autore l : lista){ %>

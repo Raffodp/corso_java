@@ -12,8 +12,6 @@
 		<th class="table-light">Elimina</th>	
 		<th class="table-light">Modifica</th>	
 	</tr>
- 
-
  		<%	List<Libro> lista = (List<Libro>) request.getAttribute("listaLibro"); %>
 		<% if(lista!=null){
 			for(Libro l : lista){ %>

@@ -10,7 +10,7 @@
    <div class="container-sm">
       <div class="input-group mb-3">
          <span class="input-group-text" id="basic-addon1">ID Libro</span>
-         <input type="number" required name="libroId" class="form-control" placeholder="35">
+         <input required type="number" name="libroId" class="form-control" placeholder="35">
       </div>
       <div class="input-group mb-3">
          <span class="input-group-text" id="basic-addon1">Titolo</span>

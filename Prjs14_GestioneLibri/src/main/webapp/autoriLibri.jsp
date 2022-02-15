@@ -12,8 +12,6 @@
 		<th class="table-light">Prezzo</th>	
 		<th class="table-light">Elimina</th>	
 	</tr>
- 
-
  		<%	List<AutoreLibro> lista = (List<AutoreLibro>) request.getAttribute("listaAutoriLibri"); %>
 		<% if(lista!=null){
 			for(AutoreLibro al : lista){ %>
@@ -33,6 +31,5 @@
 			out.print("<br> Non ci sono relazioni autore-libro in lista <br>");
 		}  %>
 	</table>
- 
  <%@ include file="bootstrap/alertContainer.jsp"%>
  <%@ include file="bootstrap/footer.jsp"%>

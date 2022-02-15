@@ -2,7 +2,7 @@
 <%@ include file="bootstrap/bootstrap.html"%>
 <%@ include file="bootstrap/navbar.html"%>
 &nbsp;
-<h2 class="text-center">Aggiungi un autore alla lista:</h2>
+<h2 class="text-center">Modifica l'autore:</h2>
 &nbsp;
 <div class="mx-auto" style="width: 500px;">
 <form method="post" action="modificaAutore">
