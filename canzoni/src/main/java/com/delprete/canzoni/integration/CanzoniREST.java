@@ -17,10 +17,10 @@ public class CanzoniREST {
 	public List<Canzone> getAll() {
 		
 		List<Canzone> canzoni = Arrays.asList(
-				new Canzone(1, "brividi"),
-				new Canzone(2, "ancora tu"),
-				new Canzone(3, "soldi"),
-				new Canzone(4, "ti stringerò")
+				new Canzone(1, "brividi","Blanco","Blanco"),
+				new Canzone(2, "ancora tu","a","b"),
+				new Canzone(3, "soldi","c","d"),
+				new Canzone(4, "ti stringerò","e","f")
 				);
 		return canzoni;
 	}
