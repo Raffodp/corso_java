@@ -11,52 +11,51 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.delprete.canzoni.model.Canzone;
 import com.delprete.canzoni.repository.Database;
+import com.delprete.canzoni.service.CanzoniService;
 
 @Controller
-@RequestMapping("canzoni")
-public class CanzoneCTRL {
+@RequestMapping("/canzoni")
+public class CanzoneCtrl {
 	
-	@Autowired
-	Database db;
-
+	@Autowired 
+	CanzoniService srv;
 	
 	@GetMapping
 	public String getAll(Model m) {
-		String titolo_bello = "Le mie canzoni preferite";
-		m.addAttribute("titolo", titolo_bello);
 		
-		m.addAttribute("canzoni",db.getAll());
-		m.addAttribute("newCanzone",new Canzone());
+		String titolo = "Le mie canzoni preferite";
+		m.addAttribute("titolo", titolo);
+		
+		m.addAttribute("canzoni", srv.getAll()); 
+	 
+		m.addAttribute("newCanzone", new Canzone());
+		
 		m.addAttribute("isUpdate", false);
 		
-		return "elenco";
+		return "elenco"; 
 	}
 	
 	@GetMapping("/prova")
 	public String getAll2() {
+		
 		return "prova";
 	}
 	
-	@PostMapping("/saveCanzone")
-	public String salvaModifica(
-			@RequestParam(value="isUpdate", required=true) boolean isUpdate,
-			@ModelAttribute Canzone newCanzone, 
-			Model model) {
-
-		if(!isUpdate) {
-			db.addCanzone(newCanzone);
-		}else {
-			db.saveById(newCanzone);
-		}
-		return getAll(model);
-	}
-	
 	@PostMapping("/editCanzone")
-	public String sceltaModifica(Model model, @RequestParam(value="idDaModificare", required=true) int idDaModificare) {
-		Canzone daModificare=db.getById(idDaModificare);
-		model.addAttribute("newCanzone",daModificare);
+	public String sceltaCanzone(Model model, @RequestParam(value="idDaModificare", required=true) int action) { 
+	
+		Canzone daModificare = srv.getOne(action);
+		model.addAttribute("newCanzone", daModificare);
 		model.addAttribute("isUpdate", true);
 		return "elenco";
 	}
+	
+	@PostMapping("/saveCanzone") 
+	public String salvaCanzone(@ModelAttribute Canzone newCanzone, @RequestParam(value="isUpdate", required=true) boolean isUpdate, Model model) { 
+
 		
+		srv.salvaModifica(newCanzone, isUpdate);
+		
+		return getAll(model);
+	}
 }
