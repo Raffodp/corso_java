@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<form action="#" th:action="@{/updateLibro/{id}}" th:object="${updateLibro}" method="get">
+	    <p> Id: <input readonly type="text" th:field="${editLibro.id}"/></p>
+	    <p> Titolo: <input type="text" th:field="${editLibro.titolo}"/></p>
+	    <p> Pagine: <input type="text" th:field="${editLibro.pagine}"/></p>
+		<p> Prezzo: <input type="number" step=0.01 th:field="${editLibro.prezzo}"/></p>
+		<p><input type="submit" value="Aggiungi"></p>
+	</form>
+</body>
+
+</body>
+</html>
