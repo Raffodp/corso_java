@@ -9,9 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.delprete.popolazione.entities.PopolazioneEta;
 import com.delprete.popolazione.entities.PopolazioneRegione;
-import com.delprete.popolazione.service.PopolazioneEtaService;
 import com.delprete.popolazione.service.PopolazioneRegioneService;
 
 @RestController
