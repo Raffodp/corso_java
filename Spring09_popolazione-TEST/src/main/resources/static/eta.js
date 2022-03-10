@@ -15,6 +15,7 @@ fetch(URL_ETA).then(e => e.json()).then(eta => {
 })
 
 SELECT_INT1.addEventListener("change", async () => {
+	clicked = false;
 	const eta = await loadEta();
 	for (const e of eta) {
 		let opt = document.createElement('option');
